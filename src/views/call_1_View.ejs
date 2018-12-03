@@ -1,0 +1,70 @@
+<% include partials/_header %>
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div><br>
+    <em>EN LLAMADA</em><br><br><br>
+</div>
+        <div class="col-md-12">
+            <table class="table table-borddered table-hover"> 
+                    <thead>
+                        <tr>
+                           
+                            <th>Id Deudo</th>
+                            <th>Nombre</th>
+                            <th>Region</th>
+                            <th>Tel. Contacto</th>
+                            <th>Tel. Movil</th>
+                            <th>Acuerdo de Pago</th>
+                            <th>Fecha Vencimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <!--<td><%= data.nombre%></td>-->
+                                <td><%= data.ID%></td>
+                                <td><%= data.nombre%></td>
+                                <td><%= data.REGION%></td>
+                                <td><%= data.TELEFONOCONTACTO%></td>
+                                <td><%= data.MOVILCONTACTO%></td>
+                                <td><%= data.FECHA_ULTIMO_PAGO%></td>
+                                <td><%= data.FECHACONTACTO%></td>
+                                
+                            </tr>   
+                    </tbody>
+                </table>
+
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add/callRecord" method="post">
+                        <div class="form-group">
+                            <input type="text" name="Fecha" id="FechaActual" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Agente" placeholder="Agente" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="text-box" name="Comentarios" placeholder="Comentarios" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var date1 = new Date();
+    console.log(date1.getTimezoneOffset());
+    var date2 = "10/233/2018 2:34pm";
+    document.getElementById("FechaActual").value = date1;
+</script>
+
+
+
+
+
+
+<% include partials/_footer %>
